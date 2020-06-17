@@ -219,30 +219,30 @@ namespace resmonV2
         }
         private void updateProcesses()
         {
+            Process[] clear = { };
+            processes = clear;
             processes = sortProcesses(Process.GetProcesses());
             printProcess(processes);
+            lbl_debug.Text = processes.Length.ToString();
         }
 
         private void Cbx_showAll_CheckedChanged(object sender, EventArgs e)
         {
-            Process[] clear = { };
+            
             if (cbx_showAll.Checked)
             {
                 tbx_pName.Enabled = false;
                 lbx_matches.Enabled = true;
                 lbx_matches.Focus();
-                processes = clear;
-                processes = sortProcesses(Process.GetProcesses());
-                printProcess(processes);
-                lbl_debug.Text = processes.Length.ToString();
+                updateProcesses();
+
+
             }
             else
             {
                 tbx_pName.Enabled = true;
                 lbx_matches.Enabled = false;
-                processes = clear;
-                printProcess(processes);
-                lbl_debug.Text = processes.Length.ToString();
+                updateProcesses();
             }
         }
 
@@ -269,6 +269,11 @@ namespace resmonV2
                 lbl_selectedProc.Text = processes.ElementAt(lbx_matches.SelectedIndex).Id.ToString();
                 selectedProc = processes.ElementAt(lbx_matches.SelectedIndex);
             }
+        }
+
+        private void Btn_refresh_Click(object sender, EventArgs e)
+        {
+            updateProcesses();
         }
     }
 }

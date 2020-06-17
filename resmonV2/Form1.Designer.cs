@@ -37,12 +37,13 @@
             this.btn_terminate = new System.Windows.Forms.Button();
             this.cbx_showAll = new System.Windows.Forms.CheckBox();
             this.lbl_selectedProc = new System.Windows.Forms.Label();
+            this.btn_refresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_debug
             // 
             this.lbl_debug.AutoSize = true;
-            this.lbl_debug.Location = new System.Drawing.Point(497, 280);
+            this.lbl_debug.Location = new System.Drawing.Point(498, 175);
             this.lbl_debug.Name = "lbl_debug";
             this.lbl_debug.Size = new System.Drawing.Size(37, 13);
             this.lbl_debug.TabIndex = 0;
@@ -105,11 +106,11 @@
             // cbx_showAll
             // 
             this.cbx_showAll.AutoSize = true;
-            this.cbx_showAll.Location = new System.Drawing.Point(500, 296);
+            this.cbx_showAll.Location = new System.Drawing.Point(501, 263);
             this.cbx_showAll.Name = "cbx_showAll";
-            this.cbx_showAll.Size = new System.Drawing.Size(119, 17);
+            this.cbx_showAll.Size = new System.Drawing.Size(117, 17);
             this.cbx_showAll.TabIndex = 6;
-            this.cbx_showAll.Text = "Show All Processes";
+            this.cbx_showAll.Text = "Show all processes";
             this.cbx_showAll.UseVisualStyleBackColor = true;
             this.cbx_showAll.CheckedChanged += new System.EventHandler(this.Cbx_showAll_CheckedChanged);
             // 
@@ -123,11 +124,22 @@
             this.lbl_selectedProc.TabIndex = 7;
             this.lbl_selectedProc.Text = "Selected Process";
             // 
+            // btn_refresh
+            // 
+            this.btn_refresh.Location = new System.Drawing.Point(501, 286);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(166, 23);
+            this.btn_refresh.TabIndex = 8;
+            this.btn_refresh.Text = "Refresh";
+            this.btn_refresh.UseVisualStyleBackColor = true;
+            this.btn_refresh.Click += new System.EventHandler(this.Btn_refresh_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 324);
+            this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.lbl_selectedProc);
             this.Controls.Add(this.cbx_showAll);
             this.Controls.Add(this.btn_terminate);
@@ -154,6 +166,7 @@
         private System.Windows.Forms.Button btn_terminate;
         private System.Windows.Forms.CheckBox cbx_showAll;
         private System.Windows.Forms.Label lbl_selectedProc;
+        private System.Windows.Forms.Button btn_refresh;
     }
 }
 
