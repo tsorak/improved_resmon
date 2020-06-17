@@ -126,7 +126,7 @@ namespace resmonV2
                 {
                     SuspendProcess(process.Id);
                 }
-                printProcess(processes);
+                updateProcesses();
             }
             else if (selectedProcs.Count > 0)
             {
@@ -157,7 +157,7 @@ namespace resmonV2
                 {
                     ResumeProcess(process.Id);
                 }
-                printProcess(processes);
+                updateProcesses();
             }
             else if (selectedProcs.Count > 0)
             {
@@ -187,9 +187,8 @@ namespace resmonV2
                 {
                     process.Kill();
                     processes = processes.Where(proc => process.Responding != false).ToArray();
-                    printProcess(processes);
-                    lbl_debug.Text = processes.Length.ToString();
                 }
+                updateProcesses();
             }
             else if(selectedProcs.Count > 0)
             {
